@@ -10,7 +10,7 @@ require 'cocoapods-playon-network/helpers'
 #end
 
 # Install all the pods needed to use the PLAYON Network games.
-def use_playon_network
+def use_playon_network(branch: "main")
   #plugin "cocoapods-playon-network", :target => target
   puts "Installing PLAYON Network Pods"
 
@@ -27,7 +27,7 @@ def use_playon_network
     _pod_plugin plugin, url
   end
 
-  pod 'PlayonNetworkSdk', :git => 'https://github.com/PlayON-Network/ios-sdk.git'
+  pod 'PlayonNetworkSdk', :git => 'https://github.com/PlayON-Network/ios-sdk.git', :branch => branch
 end
 
 def post_install_playon_network(installer, version: "12.0")
